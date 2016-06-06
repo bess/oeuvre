@@ -3,5 +3,6 @@ ruby '2.2.2'
 
 gem 'rspec'
 gem 'sparql'
+gem 'sparql-client'
 gem 'nokogiri'
 gem 'equivalent-xml'

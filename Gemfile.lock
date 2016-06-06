@@ -58,6 +58,7 @@ DEPENDENCIES
   nokogiri
   rspec
   sparql
+  sparql-client
 
 RUBY VERSION
    ruby 2.2.2p95

@@ -11,4 +11,12 @@ describe 'PerformanceGroup' do
     foo.dbpedia_uri = "http://dbpedia.org/page/The_Beatles"
     expect(foo.dbpedia_uri).to eql("http://dbpedia.org/page/The_Beatles")
   end
+  it "has a sparql_endpoint" do
+    foo = PerformanceGroup.new
+    expect(foo.sparql_endpoint).to be_instance_of(SPARQL::Client)
+  end
+  it "can execute a query" do
+    foo = PerformanceGroup.new
+    foo.execute_query
+  end
 end
