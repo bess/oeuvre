@@ -43,6 +43,22 @@ class PerformanceGroup
         puts s.inspect
       end
     end
+  end
+
+
+  def beatles_albums
+    q = "SELECT ?recording ?title ?release_date
+WHERE {
+   ?recording <http://dbpedia.org/ontology/artist> <http://dbpedia.org/resource/The_Beatles> .
+   ?recording a <http://dbpedia.org/ontology/Album> .
+   ?recording <http://dbpedia.org/property/name> ?title .
+   ?recording <http://dbpedia.org/ontology/releaseDate> ?release_date .
+      } ORDER BY ?release_date "
+    solutions = @sparql_endpoint.query(q)
+    solutions.each_solution do |solution|
+        puts solution.title.to_s + " " + solution.release_date.to_s
+    end
 
   end
+
 end

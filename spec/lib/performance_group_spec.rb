@@ -19,4 +19,8 @@ describe 'PerformanceGroup' do
     foo = PerformanceGroup.new
     foo.execute_query
   end
+  it "can get beatles albums" do
+    foo = PerformanceGroup.new
+    foo.beatles_albums
+  end
 end
